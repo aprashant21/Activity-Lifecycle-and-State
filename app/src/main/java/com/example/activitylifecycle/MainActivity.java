@@ -1,9 +1,11 @@
 package com.example.activitylifecycle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -25,11 +27,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d(LOG_TAG, "-------");
         Log.d(LOG_TAG, "onCreate");
 
         mMessageEditText = findViewById(R.id.editText_main);
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
+
+        // Restore the state.
+        if (savedInstanceState != null) {
+            boolean isVisible =
+                    savedInstanceState.getBoolean("reply_visible");
+            if (isVisible) {
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                mReplyTextView.setText(savedInstanceState.getString("reply_text"));
+                mReplyTextView.setVisibility(View.VISIBLE);
+
+            }
+        }
 
     }
 
@@ -95,5 +110,15 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.d(LOG_TAG, "onRestart");
 
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        if (mReplyHeadTextView.getVisibility() == View.VISIBLE) {
+            outState.putBoolean("reply_visible", true);
+            outState.putString("reply_text",mReplyTextView.getText().toString());
+
+        }
     }
 }
