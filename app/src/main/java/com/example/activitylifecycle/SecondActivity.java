@@ -4,38 +4,78 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Button;
 
 public class SecondActivity extends AppCompatActivity {
-    public static final String EXTRA_REPLY =
-            "com.example.activitylifecycle.extra.REPLY";
-    private EditText mReply;
-    private static final String LOG_TAG = SecondActivity.class.getSimpleName();
+    private Button apples,banana,pumpkin, cheese,rice,egg, grapes;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        mReply = findViewById(R.id.editText_second);
 
-
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        TextView textView = findViewById(R.id.text_message);
-        textView.setText(message);
+        //get references
+        apples=findViewById(R.id.btn_apple);
+        banana=findViewById(R.id.btn_banana);
+        pumpkin=findViewById(R.id.btn_pumpkin);
+        cheese=findViewById(R.id.btn_cheese);
+        rice=findViewById(R.id.btn_rice);
+        egg=findViewById(R.id.btn_egg);
+        grapes=findViewById(R.id.btn_grapes);
 
     }
 
-    public void returnReply(View view) {
-        String reply = mReply.getText().toString();
+    public void AppleReply(View view) {
         Intent replyIntent = new Intent();
-        replyIntent.putExtra(EXTRA_REPLY, reply);
+        String applesText = apples.getText().toString();
+        replyIntent.putExtra("appleReply", applesText);
         setResult(RESULT_OK,replyIntent);
-        Log.d(LOG_TAG, "End SecondActivity");
         finish();
     }
+
+    public void BananaReply(View view){
+        Intent replyIntent = new Intent();
+        String bananaText = banana.getText().toString();
+        replyIntent.putExtra("bananaReply", bananaText);
+        setResult(RESULT_OK,replyIntent);
+        finish();
+    }
+    public void PumpkinReply(View view){
+        Intent replyIntent = new Intent();
+        String pumpkinText = pumpkin.getText().toString();
+        replyIntent.putExtra("pumpkinReply", pumpkinText);
+        setResult(RESULT_OK,replyIntent);
+        finish();
+    }
+    public void CheeseReply(View view){
+        Intent replyIntent = new Intent();
+        String cheeseText = cheese.getText().toString();
+        replyIntent.putExtra("cheeseReply", cheeseText);
+        setResult(RESULT_OK,replyIntent);
+        finish();
+    }
+    public void RiceReply(View view){
+        Intent replyIntent = new Intent();
+        String riceText = rice.getText().toString();
+        replyIntent.putExtra("riceReply", riceText);
+        setResult(RESULT_OK,replyIntent);
+        finish();
+    }
+    public void EggReply(View view){
+        Intent replyIntent = new Intent();
+        String eggText = egg.getText().toString();
+        replyIntent.putExtra("eggReply", eggText);
+        setResult(RESULT_OK,replyIntent);
+        finish();
+    }
+    public void GrapesReply(View view){
+        Intent replyIntent = new Intent();
+        String grapesText = grapes.getText().toString();
+        replyIntent.putExtra("grapesReply", grapesText);
+        setResult(RESULT_OK,replyIntent);
+        finish();
+    }
+
 }

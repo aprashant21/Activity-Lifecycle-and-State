@@ -6,5 +6,12 @@
     <string name="button_second">Reply</string>
     <string name="editText_second">Enter Your Reply Here</string>
     <string name="text_header_reply">Reply Received</string>
+    <string name="apples">APPLES</string>
+    <string name="rice">RICE</string>
+    <string name="cheese">CHEESE</string>
+    <string name="banana">BANANA</string>
+    <string name="grapes">GRAPES</string>
+    <string name="pumpkin">PUMPKIN</string>
+    <string name="egg">EGG</string>
 
 </resources>
