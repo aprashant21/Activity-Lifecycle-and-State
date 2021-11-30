@@ -1,12 +1,12 @@
 package com.example.activitylifecycle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -116,9 +116,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Restore the state.
         if (savedInstanceState != null) {
-            boolean isVisible = savedInstanceState.getBoolean("reply_visible");
-            if (isVisible) {
-            }
+            textView1.setText(savedInstanceState.getString("replyTextView1"));
+            textView2.setText(savedInstanceState.getString("replyTextView2"));
+            textView3.setText(savedInstanceState.getString("replyTextView3"));
+            textView4.setText(savedInstanceState.getString("replyTextView4"));
+            textView5.setText(savedInstanceState.getString("replyTextView5"));
+            textView6.setText(savedInstanceState.getString("replyTextView6"));
+            textView7.setText(savedInstanceState.getString("replyTextView7"));
+            textView8.setText(savedInstanceState.getString("replyTextView8"));
+            textView9.setText(savedInstanceState.getString("replyTextView9"));
+            textView10.setText(savedInstanceState.getString("replyTextView10"));
+
         }
 
     }
@@ -369,8 +377,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
-
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("replyTextView1",textView1.getText().toString());
+        outState.putString("replyTextView2",textView2.getText().toString());
+        outState.putString("replyTextView3",textView3.getText().toString());
+        outState.putString("replyTextView4",textView4.getText().toString());
+        outState.putString("replyTextView5",textView5.getText().toString());
+        outState.putString("replyTextView6",textView6.getText().toString());
+        outState.putString("replyTextView7",textView7.getText().toString());
+        outState.putString("replyTextView8",textView8.getText().toString());
+        outState.putString("replyTextView9",textView9.getText().toString());
+        outState.putString("replyTextView10",textView10.getText().toString());
     }
+
 }
