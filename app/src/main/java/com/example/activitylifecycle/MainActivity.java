@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //getting reference
+        //getting reference of textView
         textView1=findViewById(R.id.textView1);
         textView2=findViewById(R.id.textView2);
         textView3=findViewById(R.id.textView3);
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         textView9=findViewById(R.id.textView9);
         textView10=findViewById(R.id.textView10);
 
+        //getting reference of button
         button1 = findViewById(R.id.button1);
         button2=findViewById(R.id.button2);
         button3=findViewById(R.id.button3);
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         button9=findViewById(R.id.button9);
         button10=findViewById(R.id.button10);
 
+        //button1 onClick
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,1);
             }
         });
+        //button2 onClick
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,2);
             }
         });
+        //button3 onClick
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,3);
             }
         });
+        //button4 onClick
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,4);
             }
         });
+        //button5 onClick
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,5);
             }
         });
+        //button6 onClick
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,6);
             }
         });
+        //button7 onClick
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,7);
             }
         });
+        //button8 onClick
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,8);
             }
         });
+        //button9 onClick
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent,9);
             }
         });
+        //button10 onClick
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    //This method is used to getting information from second activity
     @Override
     public void onActivityResult(int requestCode,
                                  int resultCode, Intent data) {
@@ -376,6 +388,7 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
+    //This method is used to save state
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
