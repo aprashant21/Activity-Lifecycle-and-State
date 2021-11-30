@@ -9,15 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TwoActivities">
-        <activity android:name="com.example.activitylifecycle.SecondActivity"
-            android:label = "Second Activity"
-            android:parentActivityName="com.example.activitylifecycle.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    "com.example.activitylifecycle.MainActivity" />
-        </activity>
-        <activity android:name="com.example.activitylifecycle.MainActivity">
+        <activity android:name="com.example.activitylifecycle.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
